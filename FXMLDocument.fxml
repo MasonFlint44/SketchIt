@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mbf437sketchit.FXMLDocumentController">
+   <children>
+      <MenuBar layoutY="2.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onOpenButtonAction" text="Open" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveButtonAction" text="Save" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#onUndoButtonAction" text="Undo" />
+                  <MenuItem fx:id="redo" mnemonicParsing="false" onAction="#onRedoButtonAction" text="Redo" />
+                  <MenuItem mnemonicParsing="false" onAction="#onResizeButtonAction" text="Resize" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClearButtonAction" text="Clear" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onAboutButtonAction" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar layoutY="27.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <items>
+            <ToggleButton fx:id="drawButton" mnemonicParsing="false" onAction="#onDrawButtonAction" selected="true" text="Draw" />
+            <ToggleButton fx:id="lineButton" mnemonicParsing="false" onAction="#onLineButtonAction" text="Line" />
+            <ToggleButton fx:id="ellipseButton" mnemonicParsing="false" onAction="#onEllipseButtonAction" text="Ellipse" />
+            <ToggleButton fx:id="rectangleButton" mnemonicParsing="false" onAction="#onRectangleButtonAction" text="Rectangle" />
+            <ToggleButton fx:id="eraseButton" mnemonicParsing="false" onAction="#onEraseButtonAction" text="Erase" />
+            <ColorPicker fx:id="colorPicker" onAction="#onColorPickerAction" />
+            <Label text="Stroke" />
+            <Slider fx:id="strokeSlider" blockIncrement="0.5" majorTickUnit="0.5" max="10.0" min="1.0" minorTickCount="0" onKeyReleased="#onStrokeSliderDrag" onMouseReleased="#onStrokeSliderDrag" prefWidth="100.0" snapToTicks="true" value="1.0" />
+            <Label fx:id="sliderLabel" text="1 px" />
+        </items>
+      </ToolBar>
+      <BorderPane layoutX="241.0" layoutY="90.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="70.0">
+         <center>
+            <ScrollPane BorderPane.alignment="CENTER">
+               <content>
+                  <Pane fx:id="pane" onMouseDragged="#onPaneMouseDrag" onMousePressed="#onPaneMousePress" onMouseReleased="#onPaneMouseRelease" prefHeight="318.0" prefWidth="578.0" style="-fx-background-color: white;" />
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

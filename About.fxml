@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="mbf437sketchit.AboutController">
+   <children>
+      <Button layoutX="526.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonAction" text="Go back" />
+      <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="imageView" fitHeight="202.0" fitWidth="155.0" layoutX="14.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="aboutMeText" layoutX="169.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="370.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="aboutAppText" layoutX="169.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="370.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="howToText" layoutX="14.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="546.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
