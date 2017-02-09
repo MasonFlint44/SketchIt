@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mbf437sketchit;
+package sketchit;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -30,7 +30,6 @@ public class RectangleBrush extends Brush {
         rect.setX(x);
         rect.setY(y);
         
-        //pane.getChildren().add(rect);
         return rect;
     }
     

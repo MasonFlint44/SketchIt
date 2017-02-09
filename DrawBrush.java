@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mbf437sketchit;
+package sketchit;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
@@ -31,7 +31,6 @@ public class DrawBrush extends Brush {
         moveTo.setY(y);
         
         path.getElements().add(moveTo);
-        //pane.getChildren().add(path);
         return path;
     }
     

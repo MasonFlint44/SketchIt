@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mbf437sketchit;
+package sketchit;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -13,21 +13,18 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.embed.swing.SwingFXUtils;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.paint.Color;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -35,12 +32,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import javax.imageio.ImageIO;
@@ -49,7 +45,7 @@ import javax.imageio.ImageIO;
  *
  * @author Mason
  */
-public class FXMLDocumentController implements Initializable { 
+public class SketchItController implements Initializable {
     private SketchItModel sketchItModel = new SketchItModel();
     private Rectangle paneBoundary = new Rectangle();
     private ToggleGroup toggleBrushes = new ToggleGroup();
@@ -165,7 +161,7 @@ public class FXMLDocumentController implements Initializable {
                 pane.setPrefSize(image.getWidth(), image.getHeight());
                 pane.getChildren().add(imageView);
             } catch(Exception e) {
-                Alert alert = new Alert(AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Load error");
                 alert.setContentText("There was an error opening the file.");
@@ -211,7 +207,7 @@ public class FXMLDocumentController implements Initializable {
                 ImageIO.write(bufferedImageNoAlpha, fileExt, file);
                 
             } catch(Exception e) {
-                Alert alert = new Alert(AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Save error");
                 alert.setContentText("There was an error saving the file.");
@@ -293,11 +289,11 @@ public class FXMLDocumentController implements Initializable {
         fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Pictures"));
         fileChooser.getExtensionFilters().addAll(
-                new ExtensionFilter("Image Files (*.bmp, *.gif, *.jpeg, *.png)", "*.bmp", "*.BMP", "*.gif", "*.GIF", "*.jpg", "*.JPG", "*.jpeg", "*.JPEG", "*.png", "*.PNG"),
-                new ExtensionFilter("Bitmap Image (*.bmp)", "*.bmp", "*.BMP"),
-                new ExtensionFilter("GIF Image (*.gif)", "*.gif", "*.GIF"),
-                new ExtensionFilter("JPEG Image (*.jpeg)", "*.jpeg", "*.JPEG", "*.jpg", "*.JPG"),
-                new ExtensionFilter("PNG Image (*.png)", "*.png", "*.PNG"));
+                new FileChooser.ExtensionFilter("Image Files (*.bmp, *.gif, *.jpeg, *.png)", "*.bmp", "*.BMP", "*.gif", "*.GIF", "*.jpg", "*.JPG", "*.jpeg", "*.JPEG", "*.png", "*.PNG"),
+                new FileChooser.ExtensionFilter("Bitmap Image (*.bmp)", "*.bmp", "*.BMP"),
+                new FileChooser.ExtensionFilter("GIF Image (*.gif)", "*.gif", "*.GIF"),
+                new FileChooser.ExtensionFilter("JPEG Image (*.jpeg)", "*.jpeg", "*.JPEG", "*.jpg", "*.JPG"),
+                new FileChooser.ExtensionFilter("PNG Image (*.png)", "*.png", "*.PNG"));
         
         undo.setAccelerator(new KeyCodeCombination(KeyCode.Z, KeyCombination.CONTROL_DOWN));
         redo.setAccelerator(new KeyCodeCombination(KeyCode.Y, KeyCombination.CONTROL_DOWN));

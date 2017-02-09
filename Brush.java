@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mbf437sketchit;
+package sketchit;
 
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 
@@ -17,7 +15,6 @@ import javafx.scene.shape.Shape;
 public abstract class Brush {
     protected double stroke;
     protected Color color;
-    //protected Pane pane;
     
     public abstract Shape startBrush(double x, double y);
     public abstract Shape brush(double x, double y);
@@ -38,12 +35,4 @@ public abstract class Brush {
     public void setColor(Color color) {
         this.color = color;
     }
-    
-//    public Pane getPane() {
-//        return pane;
-//    }
-//    
-//    public void setPane(Pane pane) {
-//        this.pane = pane;
-//    }
 }

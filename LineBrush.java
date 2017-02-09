@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mbf437sketchit;
+package sketchit;
 
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
@@ -26,7 +26,6 @@ public class LineBrush extends Brush {
         line.setEndX(x);
         line.setEndY(y);
         
-        //pane.getChildren().add(line);
         return line;
     }
     

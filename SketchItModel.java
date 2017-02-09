@@ -3,14 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mbf437sketchit;
+package sketchit;
 
-import java.io.File;
-import java.util.List;
 import java.util.Stack;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 
@@ -52,7 +47,6 @@ public class SketchItModel {
         Shape shape = null;
         if(!redoList.empty()) {
             shape = redoList.pop();
-            //pane.getChildren().add(shape);
             addToUndo(shape);
         }
         return shape;
